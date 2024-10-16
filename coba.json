@@ -1,0 +1,416 @@
+{
+    "status": true,
+    "message": "Ambil data",
+    "data": {
+      "current_page": 1,
+      "data": [
+        {
+          "id": 4,
+          "user_id": 1,
+          "nama_bayi": "Renata Ilham Malik",
+          "jenis_kelamin": "Perempuan",
+          "berat_badan": 7.9,
+          "usia": 23,
+          "tinggi_badan": 76,
+          "z_score_bbu": -2.62,
+          "z_score_tbu": -2.97,
+          "z_score_bbtb": -1.75,
+          "fuzzy_bbu": [
+            {
+              "id": 2,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.84,
+                  "interval_awal": -3.25,
+                  "interval_akhir": -2.5
+                }
+              ],
+              "status": "BB Kurang",
+              "interval": [
+                -3.25,
+                -2.5,
+                -1.75
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -3.25,
+              "himpunan_fuzzy_akhir": -1.75
+            }
+          ],
+          "fuzzy_tbu": [
+            {
+              "id": 5,
+              "tipe": "Trapesium",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.12,
+                  "interval_awal": -3,
+                  "interval_akhir": -2.75
+                }
+              ],
+              "status": "Sangat Pendek",
+              "interval": [
+                -4,
+                -4,
+                -3,
+                -2.75
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -4,
+              "himpunan_fuzzy_akhir": -2.75
+            },
+            {
+              "id": 6,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.12,
+                  "interval_awal": -3,
+                  "interval_akhir": -2.75
+                },
+                {
+                  "nilai_fuzzy": 0.37,
+                  "interval_awal": -3.25,
+                  "interval_akhir": -2.5
+                }
+              ],
+              "status": "Pendek",
+              "interval": [
+                -3.25,
+                -2.5,
+                -1.75
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -3.25,
+              "himpunan_fuzzy_akhir": -1.75
+            }
+          ],
+          "fuzzy_bbtb": [
+            {
+              "id": 10,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 1,
+                  "interval_awal": -2.5,
+                  "interval_akhir": -1.75
+                }
+              ],
+              "status": "Gizi Kurang",
+              "interval": [
+                -3.25,
+                -2.5,
+                -1.75
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -3.25,
+              "himpunan_fuzzy_akhir": -1.75
+            },
+            {
+              "id": 11,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 1,
+                  "interval_awal": -2.5,
+                  "interval_akhir": -1.75
+                },
+                {
+                  "nilai_fuzzy": 0.29,
+                  "interval_awal": -2.25,
+                  "interval_akhir": -0.5
+                }
+              ],
+              "status": "Gizi Baik (Normal)",
+              "interval": [
+                -2.25,
+                -0.5,
+                1.25
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -2.25,
+              "himpunan_fuzzy_akhir": 1.25
+            }
+          ],
+          "kondisi_anak": [
+            {
+              "id": 3,
+              "created_at": null,
+              "deleted_at": null,
+              "updated_at": null,
+              "index_fuzzy_id": 1,
+              "variabel_fuzzy_bbu_id": 2,
+              "variabel_fuzzy_tbu_id": 5,
+              "variabel_fuzzy_bbtb_id": 10
+            },
+            {
+              "id": 16,
+              "created_at": null,
+              "deleted_at": null,
+              "updated_at": null,
+              "index_fuzzy_id": 1,
+              "variabel_fuzzy_bbu_id": 2,
+              "variabel_fuzzy_tbu_id": 6,
+              "variabel_fuzzy_bbtb_id": 10
+            }
+          ],
+          "kesimpulan": "Berikutkesimpulan Stunting Fuzzy Analyzer untuk bayi Renata Ilham Malik:\n\nBerdasarkan hasil analisis, bayi Renata Ilham Malik memiliki tingkat stunting yang tinggi. Z-Score BBU (-2.62) menunjukkan bahwa berat badan Renata kurang seharusnya untuk usianya, Z-Score TBU (-2.97) menunjukkan bahwa tinggi badan Renata sangat kurang seharusnya untuk usianya, dan Z-Score BBTB (-1.75) menunjukkan bahwa berat badan Renata kurang seharusnya untuk tinggi badannya.\n\nDalam Fuzzy Analysis, Renata Ilham Malik memiliki 2 kondisi stunting, yaitu:\n\n1. Kondisi &quot;BB Kurang&quot; dan &quot;Sangat Pendek&quot; (Fuzzy BBU dan Fuzzy TBU), yang menunjukkan bahwa berat badan dan tinggi badan Renata ilmiah jauh lebih rendah saat dibandingkan dengan rata-rata untuk usianya.\n2. Kondisi &quot;Gizi Kurang&quot; (Fuzzy BBTB), yang menunjukkan bahwa berat badan Renata tersebut tidak mencukupi untuk tinggi badannya.\n\nDalam kesimpulan, bayi Renata Ilham Malik memiliki tingkat stunting yang tinggi, sehingga diperlukan perawatan khusus dan monitoring yang lebih teliti untuk menangani stunting tersebut.",
+          "deleted_at": null,
+          "created_at": "2024-09-30T09:50:03.000000Z",
+          "updated_at": "2024-09-30T09:50:03.000000Z"
+        },
+        {
+          "id": 3,
+          "user_id": 1,
+          "nama_bayi": "Alvis Nugraha",
+          "jenis_kelamin": "Laki - Laki",
+          "berat_badan": 8.9,
+          "usia": 18,
+          "tinggi_badan": 76,
+          "z_score_bbu": -1.82,
+          "z_score_tbu": -2.33,
+          "z_score_bbtb": -1,
+          "fuzzy_bbu": [
+            {
+              "id": 2,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.91,
+                  "interval_awal": -2.5,
+                  "interval_akhir": -1.75
+                }
+              ],
+              "status": "BB Kurang",
+              "interval": [
+                -3.25,
+                -2.5,
+                -1.75
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -3.25,
+              "himpunan_fuzzy_akhir": -1.75
+            },
+            {
+              "id": 3,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.91,
+                  "interval_awal": -2.5,
+                  "interval_akhir": -1.75
+                },
+                {
+                  "nilai_fuzzy": 0.25,
+                  "interval_awal": -2.25,
+                  "interval_akhir": -0.5
+                }
+              ],
+              "status": "Normal",
+              "interval": [
+                -2.25,
+                -0.5,
+                1.25
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -2.25,
+              "himpunan_fuzzy_akhir": 1.25
+            }
+          ],
+          "fuzzy_tbu": [
+            {
+              "id": 6,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.23,
+                  "interval_awal": -2.5,
+                  "interval_akhir": -1.75
+                }
+              ],
+              "status": "Pendek",
+              "interval": [
+                -3.25,
+                -2.5,
+                -1.75
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -3.25,
+              "himpunan_fuzzy_akhir": -1.75
+            }
+          ],
+          "fuzzy_bbtb": [
+            {
+              "id": 11,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.71,
+                  "interval_awal": -2.25,
+                  "interval_akhir": -0.5
+                }
+              ],
+              "status": "Gizi Baik (Normal)",
+              "interval": [
+                -2.25,
+                -0.5,
+                1.25
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -2.25,
+              "himpunan_fuzzy_akhir": 1.25
+            }
+          ],
+          "kondisi_anak": [
+            {
+              "id": 20,
+              "created_at": null,
+              "deleted_at": null,
+              "updated_at": null,
+              "index_fuzzy_id": 1,
+              "variabel_fuzzy_bbu_id": 3,
+              "variabel_fuzzy_tbu_id": 6,
+              "variabel_fuzzy_bbtb_id": 11
+            }
+          ],
+          "kesimpulan": "Berikut adalah kesimpulan dari hasil analisis Stunting Fuzzy Analyzer untuk bayi Alvis Nugraha:\n\n* Berat badan Alvis Nugraha, yakni 8.9 kg, memiliki Z-Score BBU sebesar -1.82 yang menunjukkan kondisi &quot;BB Kurang&quot; (kurang berat badan).\n* Tinggi badan Alvis Nugraha, yakni 76 cm, memiliki Z-Score TBU sebesar -2.33 yang menunjukkan kondisi &quot;Pendek&quot; (pendek tinggi badan).\n* Berat badan Alvis Nugraha terhadap tinggi badannya memiliki Z-Score BBTB sebesar -1 yang menunjukkan kondisi &quot;Gizi Baik (Normal)&quot;.\n* Berdasarkan analisis fuzzy, kondisi Alvis Nugraha dapat disimpulkan sebagai: anak tersebut memiliki berat badan yang kurang, tinggi badan yang pendek, dan berat badannya yang seimbang dengan tinggi badannya.\n\nNamun, perlu diingat bahwa analisis ini hanya sebagai konklusi awal dan perlu dilakukan pengecekan lebih lanjut dan pemeriksaan medis oleh dokter untuk mengetahui kondisi kesehatan Alvis Nugraha yang lebih jelas.",
+          "deleted_at": null,
+          "created_at": "2024-09-30T09:47:24.000000Z",
+          "updated_at": "2024-09-30T09:47:24.000000Z"
+        },
+        {
+          "id": 1,
+          "user_id": 1,
+          "nama_bayi": "Yulia",
+          "jenis_kelamin": "Perempuan",
+          "berat_badan": 9,
+          "usia": 20,
+          "tinggi_badan": 75,
+          "z_score_bbu": -1.33,
+          "z_score_tbu": -2.57,
+          "z_score_bbtb": -0.14,
+          "fuzzy_bbu": [
+            {
+              "id": 3,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.53,
+                  "interval_awal": -2.25,
+                  "interval_akhir": -0.5
+                }
+              ],
+              "status": "Normal",
+              "interval": [
+                -2.25,
+                -0.5,
+                1.25
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -2.25,
+              "himpunan_fuzzy_akhir": 1.25
+            }
+          ],
+          "fuzzy_tbu": [
+            {
+              "id": 6,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.91,
+                  "interval_awal": -3.25,
+                  "interval_akhir": -2.5
+                }
+              ],
+              "status": "Pendek",
+              "interval": [
+                -3.25,
+                -2.5,
+                -1.75
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -3.25,
+              "himpunan_fuzzy_akhir": -1.75
+            }
+          ],
+          "fuzzy_bbtb": [
+            {
+              "id": 11,
+              "tipe": "Segitiga",
+              "fuzzy": [
+                {
+                  "nilai_fuzzy": 0.21,
+                  "interval_awal": -0.5,
+                  "interval_akhir": 1.25
+                }
+              ],
+              "status": "Gizi Baik (Normal)",
+              "interval": [
+                -2.25,
+                -0.5,
+                1.25
+              ],
+              "range_awal": -4,
+              "range_akhir": -4,
+              "himpunan_fuzzy_awal": -2.25,
+              "himpunan_fuzzy_akhir": 1.25
+            }
+          ],
+          "kondisi_anak": [
+            {
+              "id": 20,
+              "created_at": null,
+              "deleted_at": null,
+              "updated_at": null,
+              "index_fuzzy_id": 1,
+              "variabel_fuzzy_bbu_id": 3,
+              "variabel_fuzzy_tbu_id": 6,
+              "variabel_fuzzy_bbtb_id": 11
+            }
+          ],
+          "kesimpulan": "Berikut adalah kesimpulan analisis stunting untuk bayi Yulia:\n\nBerdasarkan data berat badan, usia, dan tinggi badan Yulia, hasil Z-Score menunjukkan bahwa:\n\n* Berat badan Yulia berada di bawah rata-rata untuk usianya (Z-Score BBU = -1.33)\n* Tinggi badan Yulia sangat berada di bawah rata-rata untuk usianya (Z-Score TBU = -2.57)\n* Berat badan Yulia normal relatif dengan tinggi badan (Z-Score BBTB = -0.14)\n\nBerdasarkan analisis fuzzy, kondisi stunting Yulia dapat diinterpretasikan sebagai berikut:\n\n* Kondisi BBU (Berat Badan terhadap Usia) Yulia diperkirakan sebagai Normal dengan nilai fuzzy sebesar 0.53.\n* Kondisi TBU (Tinggi Badan terhadap Usia) Yulia diperkirakan sebagai Pendek dengan nilai fuzzy sebesar 0.91.\n* Kondisi BBTB (Berat Badan terhadap Tinggi Badan) Yulia diperkirakan sebagai Gizi Baik (Normal) dengan nilai fuzzy sebesar 0.21.\n\nDengan demikian, dapat disimpulkan bahwa Yulia memiliki kondisi stunting yang kurang baik, dengan indeks stunting yang berada pada tingkat pendek (Pendek) dan berat badan yang normal relatif dengan tinggi badan.",
+          "deleted_at": null,
+          "created_at": "2024-09-28T05:09:04.000000Z",
+          "updated_at": "2024-09-28T05:09:04.000000Z"
+        }
+      ],
+      "first_page_url": "http://127.0.0.1:8000/api/kalkulator-fuzzy?page=1",
+      "from": 1,
+      "last_page": 1,
+      "last_page_url": "http://127.0.0.1:8000/api/kalkulator-fuzzy?page=1",
+      "links": [
+        {
+          "url": null,
+          "label": "&laquo; Sebelumnya",
+          "active": false
+        },
+        {
+          "url": "http://127.0.0.1:8000/api/kalkulator-fuzzy?page=1",
+          "label": "1",
+          "active": true
+        },
+        {
+          "url": null,
+          "label": "Berikutnya &raquo;",
+          "active": false
+        }
+      ],
+      "next_page_url": null,
+      "path": "http://127.0.0.1:8000/api/kalkulator-fuzzy",
+      "per_page": 5,
+      "prev_page_url": null,
+      "to": 3,
+      "total": 3
+    }
+  }

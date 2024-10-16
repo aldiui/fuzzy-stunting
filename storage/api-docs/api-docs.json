@@ -1,0 +1,1430 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Stunting",
+        "description": "Dokumentasi API untuk Sistem Stunting",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/artikel": {
+            "get": {
+                "tags": [
+                    "Artikel"
+                ],
+                "summary": "Ambil daftar Artikel",
+                "operationId": "46557913aaca826a1a9257e049eca9cb",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Jumlah Artikel per halaman",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 10
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Jumlah halaman Artikel",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mendapatkan daftar Artikel",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "API Artikel"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "current_page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer",
+                                                                "example": 1
+                                                            },
+                                                            "title": {
+                                                                "type": "string",
+                                                                "example": "Breaking Artikel"
+                                                            },
+                                                            "content": {
+                                                                "type": "string",
+                                                                "example": "This is the content of the Artikel."
+                                                            },
+                                                            "created_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "example": "2024-09-01T00:00:00Z"
+                                                            },
+                                                            "updated_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "example": "2024-09-01T12:00:00Z"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": 50
+                                                },
+                                                "last_page": {
+                                                    "type": "integer",
+                                                    "example": 5
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "example": 10
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal mendapatkan daftar Artikel",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal mendapatkankan data"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/artikel/{id}": {
+            "get": {
+                "tags": [
+                    "Artikel"
+                ],
+                "summary": "Ambil detail Artikel",
+                "operationId": "f5489db41533132eb0be1a0fd3e43cf0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Artikel",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mendapatkan detail Artikel",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "API Artikel"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": "Breaking Artikel"
+                                                },
+                                                "content": {
+                                                    "type": "string",
+                                                    "example": "This is the content of the Artikel."
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-09-01T00:00:00Z"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-09-01T12:00:00Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal mendapatkan detail Artikel",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal mendapatkankan data"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Artikel tidak ditemukan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Artikel tidak ditemukan"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login pengguna",
+                "operationId": "222b2625838e3c57e017987f73598fda",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login berhasil",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Login berhasil."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "token": {
+                                                    "type": "string",
+                                                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Email tidak ditemukan atau password salah."
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Kesalahan validasi",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Kesalahan validasi"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal melakukan login"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register pengguna",
+                "operationId": "8e4e3cb7b46126f4696379d3c7eeb4ad",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nama",
+                                    "email",
+                                    "password",
+                                    "konfirmasi_password"
+                                ],
+                                "properties": {
+                                    "nama": {
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password123"
+                                    },
+                                    "konfirmasi_password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Register berhasil",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Login berhasil."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "token": {
+                                                    "type": "string",
+                                                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Kesalahan validasi",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Kesalahan validasi"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal melakukan login"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout pengguna",
+                "operationId": "1fed6188e46ccd76d9d1e177f9b8037a",
+                "responses": {
+                    "200": {
+                        "description": "Logout berhasil",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Logout berhasil."
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal melakukan logout"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/chat": {
+            "get": {
+                "tags": [
+                    "Chat"
+                ],
+                "summary": "Ambil riwayat obrolan pengguna",
+                "operationId": "eac7b4175ecdae280827e14c809b3d37",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Jumlah chat per halaman",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 5
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Jumlah halaman chat",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mendapatkan riwayat obrolan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "API Chat"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "message": {
+                                                        "type": "string",
+                                                        "example": "Hello"
+                                                    },
+                                                    "role": {
+                                                        "type": "string",
+                                                        "example": "user"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-09-01T00:00:00Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal mendapatkan riwayat obrolan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal mendapatkankan data"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Chat"
+                ],
+                "summary": "Kirim pesan obrolan",
+                "operationId": "b20304b5bc741340e32dd418ca10b60c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "message"
+                                ],
+                                "properties": {
+                                    "message": {
+                                        "type": "string",
+                                        "example": "Apa itu stunting?"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Pesan obrolan berhasil dikirim",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "API Chat"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "message": {
+                                                    "type": "string",
+                                                    "example": "Stunting adalah kondisi..."
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Kesalahan validasi",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Kesalahan validasi"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal mengirim pesan obrolan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal mendapatkankan data"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/kalkulator-fuzzy": {
+            "get": {
+                "tags": [
+                    "Kalkulator Fuzzy"
+                ],
+                "summary": "Ambil riwayat perhitungan fuzzy pengguna",
+                "operationId": "010cde55e7bad4c4194270fc09500c78",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Jumlah data per halaman",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 5
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Halaman yang ingin dilihat",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mengambil riwayat perhitungan fuzzy",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Ambil data"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "nama_bayi": {
+                                                        "type": "string",
+                                                        "example": "Bayi 1"
+                                                    },
+                                                    "kondisi_anak": {
+                                                        "type": "string",
+                                                        "example": "Normal"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-09-01T00:00:00Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal mengambil riwayat perhitungan fuzzy",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal mendapatkankan data"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Kalkulator Fuzzy"
+                ],
+                "summary": "Hitung data kalkulator fuzzy",
+                "operationId": "e3c69d9e92bf21455f19871ba9519a91",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nama_bayi",
+                                    "jenis_kelamin",
+                                    "usia",
+                                    "berat_badan",
+                                    "tinggi_badan"
+                                ],
+                                "properties": {
+                                    "nama_bayi": {
+                                        "type": "string",
+                                        "example": "Bayi 1"
+                                    },
+                                    "jenis_kelamin": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Laki - Laki",
+                                            "Perempuan"
+                                        ],
+                                        "example": "Laki - Laki"
+                                    },
+                                    "usia": {
+                                        "type": "integer",
+                                        "example": 12
+                                    },
+                                    "berat_badan": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 10.5
+                                    },
+                                    "tinggi_badan": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 75.5
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Data fuzzy berhasil dihitung",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Data fuzzy berhasil dihitung."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "z_score_bbu": {
+                                                    "type": "number",
+                                                    "format": "float",
+                                                    "example": -1.2
+                                                },
+                                                "z_score_tbu": {
+                                                    "type": "number",
+                                                    "format": "float",
+                                                    "example": 0.8
+                                                },
+                                                "z_score_bbtb": {
+                                                    "type": "number",
+                                                    "format": "float",
+                                                    "example": 1.1
+                                                },
+                                                "fuzzy_bbu": {
+                                                    "type": "string",
+                                                    "example": "Normal"
+                                                },
+                                                "fuzzy_tbu": {
+                                                    "type": "string",
+                                                    "example": "Pendek"
+                                                },
+                                                "fuzzy_bbtb": {
+                                                    "type": "string",
+                                                    "example": "Normal"
+                                                },
+                                                "kondisi_anak": {
+                                                    "type": "string",
+                                                    "example": "Normal"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Kesalahan validasi",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Kesalahan validasi"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal menghitung data fuzzy",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal menghitung data fuzzy"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/kalkulator-fuzzy/{id}": {
+            "get": {
+                "tags": [
+                    "Kalkulator Fuzzy"
+                ],
+                "summary": "Ambil data perhitungan fuzzy berdasarkan ID",
+                "operationId": "432c54dbf887f7bb6613241413c5e559",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Kalkulator Fuzzy",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mengambil data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Ambil data"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "nama_bayi": {
+                                                    "type": "string",
+                                                    "example": "Bayi 1"
+                                                },
+                                                "kondisi_anak": {
+                                                    "type": "string",
+                                                    "example": "Normal"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-09-01T00:00:00Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal mendapatkankan data"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal mendapatkan data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal mendapatkankan data"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Mengambil detail pengguna yang terautentikasi",
+                "operationId": "ef3192335324c07faff67807a2e8a2f8",
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mengambil data pengguna",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Data pengguna berhasil ditemukan."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "John Doe"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "john.doe@example.com"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-09-01T00:00:00Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal mengambil data pengguna",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal mendapatkan data pengguna"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Memperbarui detail pengguna yang terautentikasi",
+                "operationId": "5eecd6f62690794e94b1167a814a9059",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "nama"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "john.doe@example.com"
+                                    },
+                                    "nama": {
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "newpassword123",
+                                        "nullable": true
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Berhasil memperbarui data pengguna",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Data pengguna berhasil diperbarui."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "John Doe"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "john.doe@example.com"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-09-01T00:00:00Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Kesalahan validasi",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Kesalahan validasi"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Gagal memperbarui data pengguna",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Gagal memperbarui data pengguna"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Artikel",
+            "description": "Artikel"
+        },
+        {
+            "name": "Auth",
+            "description": "Auth"
+        },
+        {
+            "name": "Chat",
+            "description": "Chat"
+        },
+        {
+            "name": "Kalkulator Fuzzy",
+            "description": "Kalkulator Fuzzy"
+        },
+        {
+            "name": "User",
+            "description": "User"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "Laravel JWT authentication",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}
