@@ -12,7 +12,7 @@ class Artikel extends Model
 
     protected $guarded = [];
 
-    public function getGambarAttribute()
+    public function getGambarUrlAttribute()
     {
         return $this->attributes['gambar'] ? url('storage/' . $this->attributes['gambar']) : null;
     }
