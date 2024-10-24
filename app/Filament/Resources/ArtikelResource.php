@@ -45,7 +45,6 @@ class ArtikelResource extends Resource
                             ->required(),
                         Forms\Components\FileUpload::make('gambar')
                             ->image()
-                            ->requred()
                             ->visibility('public')
                             ->maxSize(10240)
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
