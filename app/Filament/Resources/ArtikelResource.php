@@ -44,8 +44,15 @@ class ArtikelResource extends Resource
                             ->default(0)
                             ->required(),
                         Forms\Components\FileUpload::make('gambar')
+                            ->image()
+                            ->requred()
+                            ->visibility('public')
+                            ->maxSize(10240)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
+                            ->enableOpen()
                             ->required(fn($record) => $record === null)
-                            ->image(),
+                            ->imageEditor()
+                            ->enableDownload(),
                         Forms\Components\RichEditor::make('deskripsi')
                             ->required()
                             ->columnSpanFull(),
