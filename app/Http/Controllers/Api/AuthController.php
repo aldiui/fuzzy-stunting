@@ -153,7 +153,6 @@ class AuthController extends Controller
                 'nama' => 'required|min:3|max:50',
                 'email' => 'required|email|min:3|max:50|unique:users',
                 'password' => 'required|min:8|max:20',
-                'konfirmasi_password' => 'required|min:8|max:20|same:password',
             ]);
 
             if ($validator->fails()) {
