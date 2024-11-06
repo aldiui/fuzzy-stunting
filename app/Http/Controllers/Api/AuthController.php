@@ -111,7 +111,6 @@ class AuthController extends Controller
      *             @OA\Property(property="nama", type="string", example="John Doe"),
      *             @OA\Property(property="email", type="string", example="user@example.com"),
      *             @OA\Property(property="password", type="string", format="password", example="password123"),
-     *             @OA\Property(property="konfirmasi_password", type="string", format="password", example="password123"),
      *         ),
      *     ),
      *     @OA\Response(

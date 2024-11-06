@@ -424,11 +424,6 @@
                                         "type": "string",
                                         "format": "password",
                                         "example": "password123"
-                                    },
-                                    "konfirmasi_password": {
-                                        "type": "string",
-                                        "format": "password",
-                                        "example": "password123"
                                     }
                                 },
                                 "type": "object"
