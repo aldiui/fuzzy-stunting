@@ -29,20 +29,6 @@ class KalkulatorFuzzyController extends Controller
      *     summary="Ambil riwayat perhitungan fuzzy pengguna",
      *     tags={"Kalkulator Fuzzy"},
      *     security={{"bearerAuth":{}}},
-     *     @OA\Parameter(
-     *         name="per_page",
-     *         in="query",
-     *         required=false,
-     *         description="Jumlah data per halaman",
-     *         @OA\Schema(type="integer", example=5)
-     *     ),
-     *     @OA\Parameter(
-     *         name="page",
-     *         in="query",
-     *         required=false,
-     *         description="Halaman yang ingin dilihat",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
      *     @OA\Response(
      *         response=200,
      *         description="Berhasil mengambil riwayat perhitungan fuzzy",
@@ -74,7 +60,7 @@ class KalkulatorFuzzyController extends Controller
     {
         try {
             $user = auth('api')->user();
-            $kalkulatorFuzzy = $user->kalkulatorFuzzies()->orderBy('created_at', 'DESC')->paginate($request->get('per_page', 5));
+            $kalkulatorFuzzy = $user->kalkulatorFuzzies()->orderBy('created_at', 'DESC')->get();
             return $this->successResponse($kalkulatorFuzzy, 'Ambil data', 200);
         } catch (Exception $e) {
             return $this->errorResponse(null, 'Gagal mendapatkankan data', 500);

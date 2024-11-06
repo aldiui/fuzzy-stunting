@@ -17,20 +17,6 @@ class ArtikelController extends Controller
      *     summary="Ambil daftar Artikel",
      *     tags={"Artikel"},
      *     security={{"bearerAuth":{}}},
-     *     @OA\Parameter(
-     *         name="per_page",
-     *         in="query",
-     *         required=false,
-     *         description="Jumlah Artikel per halaman",
-     *         @OA\Schema(type="integer", example=10)
-     *     ),
-     *     @OA\Parameter(
-     *         name="page",
-     *         in="query",
-     *         required=false,
-     *         description="Jumlah halaman Artikel",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
      *     @OA\Response(
      *         response=200,
      *         description="Berhasil mendapatkan daftar Artikel",
@@ -68,7 +54,7 @@ class ArtikelController extends Controller
     public function index(Request $request)
     {
         try {
-            $Artikel = Artikel::where('status', 1)->orderBy('created_at', 'desc')->paginate($request->get('per_page', 10));
+            $Artikel = Artikel::where('status', 1)->orderBy('created_at', 'desc')->get();
             return $this->successResponse($Artikel, 'API Artikel', 200);
         } catch (Exception $e) {
             return $this->errorResponse(null, 'Gagal mendapatkankan data', 500);

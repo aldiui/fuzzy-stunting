@@ -26,20 +26,6 @@ class ChatController extends Controller
      *     summary="Ambil riwayat obrolan pengguna",
      *     tags={"Chat"},
      *     security={{"bearerAuth":{}}},
-     *     @OA\Parameter(
-     *         name="per_page",
-     *         in="query",
-     *         required=false,
-     *         description="Jumlah chat per halaman",
-     *         @OA\Schema(type="integer", example=5)
-     *     ),
-     *     @OA\Parameter(
-     *         name="page",
-     *         in="query",
-     *         required=false,
-     *         description="Jumlah halaman chat",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
      *     @OA\Response(
      *         response=200,
      *         description="Berhasil mendapatkan riwayat obrolan",
@@ -71,7 +57,7 @@ class ChatController extends Controller
     {
         try {
             $user = auth('api')->user();
-            $chats = $user->chats()->orderBy('created_at', 'desc')->paginate($request->get('per_page', 10));
+            $chats = $user->chats()->orderBy('created_at', 'desc')->get();
             return $this->successResponse($chats, 'API Chat', 200);
         } catch (Exception $e) {
             return $this->errorResponse(null, 'Gagal mendapatkankan data', 500);

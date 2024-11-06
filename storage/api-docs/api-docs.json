@@ -13,28 +13,6 @@
                 ],
                 "summary": "Ambil daftar Artikel",
                 "operationId": "46557913aaca826a1a9257e049eca9cb",
-                "parameters": [
-                    {
-                        "name": "per_page",
-                        "in": "query",
-                        "description": "Jumlah Artikel per halaman",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "example": 10
-                        }
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Jumlah halaman Artikel",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "example": 1
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Berhasil mendapatkan daftar Artikel",
@@ -579,28 +557,6 @@
                 ],
                 "summary": "Ambil riwayat obrolan pengguna",
                 "operationId": "eac7b4175ecdae280827e14c809b3d37",
-                "parameters": [
-                    {
-                        "name": "per_page",
-                        "in": "query",
-                        "description": "Jumlah chat per halaman",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "example": 5
-                        }
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Jumlah halaman chat",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "example": 1
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Berhasil mendapatkan riwayat obrolan",
@@ -797,28 +753,6 @@
                 ],
                 "summary": "Ambil riwayat perhitungan fuzzy pengguna",
                 "operationId": "010cde55e7bad4c4194270fc09500c78",
-                "parameters": [
-                    {
-                        "name": "per_page",
-                        "in": "query",
-                        "description": "Jumlah data per halaman",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "example": 5
-                        }
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Halaman yang ingin dilihat",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "example": 1
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Berhasil mengambil riwayat perhitungan fuzzy",
