@@ -191,7 +191,7 @@ class KalkulatorFuzzyController extends Controller
             $params = $request->all();
             $validator = Validator::make($params, [
                 'nama_bayi' => 'required|string|max:255',
-                'jenis_kelamin' => 'required|string|in:Laki - Laki,Perempuan',
+                'jenis_kelamin' => 'required|string|in:Laki-Laki,Perempuan',
                 'usia' => 'required|integer',
                 'berat_badan' => 'required|numeric',
                 'tinggi_badan' => 'required|numeric',
