@@ -54,14 +54,17 @@ class ArtikelController extends Controller
     public function index(Request $request)
     {
         try {
-            $Artikel = Artikel::where('status', 1)->orderBy('created_at', 'desc')->get();
-            $Artikel = $Artikel->map(function ($Artikel) {
-                $Artikel->created_at = $Artikel->created_at->format('l, j F Y');
-                $Artikel->gambar = url('storage/' . $Artikel->gambar);
+            $artikels = Artikel::where('status', 1)->orderBy('created_at', 'desc')->get();
+
+            $artikels = $artikels->map(function ($artikel) {
+                $artikel->created_at = $artikel->created_at->format('l, j F Y');
+                $artikel->gambar = url('storage/' . $artikel->gambar);
+                return $artikel;
             });
-            return $this->successResponse($Artikel, 'API Artikel', 200);
+
+            return $this->successResponse($artikels, 'API Artikel', 200);
         } catch (Exception $e) {
-            return $this->errorResponse(null, 'Gagal mendapatkankan data', 500);
+            return $this->errorResponse(null, 'Gagal mendapatkan data: ' . $e->getMessage(), 500);
         }
     }
 
