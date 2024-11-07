@@ -56,7 +56,7 @@ class ArtikelController extends Controller
         try {
             $Artikel = Artikel::where('status', 1)->orderBy('created_at', 'desc')->get();
             $Artikel = $Artikel->map(function ($Artikel) {
-                $Artikel->created_at = $Artikel->created_at->diffForHumans();
+                $Artikel->created_at = $Artikel->created_at->format('l, j F Y');
                 $Artikel->gambar = url('storage/' . $Artikel->gambar);
             });
             return $this->successResponse($Artikel, 'API Artikel', 200);
