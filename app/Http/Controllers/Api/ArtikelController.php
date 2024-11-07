@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use App\Models\Artikel;
 use App\Traits\ApiResponder;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ArtikelController extends Controller
 {
@@ -57,7 +58,7 @@ class ArtikelController extends Controller
             $artikels = Artikel::where('status', 1)->orderBy('created_at', 'desc')->get();
 
             $artikels = $artikels->map(function ($artikel) {
-                $artikel->created_at = $artikel->created_at->format('l, j F Y');
+                $artikel->created_at = Carbon::parse($artikel->created_at)->format('l, J F Y');
                 $artikel->gambar = url('storage/' . $artikel->gambar);
                 return $artikel;
             });
