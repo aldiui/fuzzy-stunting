@@ -17,4 +17,9 @@ class Artikel extends Model
         return $this->attributes['gambar'] ? url('storage/' . $this->attributes['gambar']) : null;
     }
 
+    public function getCreatedAtForHumansAttribute()
+    {
+        return $this->created_at ? $this->created_at->diffForHumans() : null;
+    }
+
 }
