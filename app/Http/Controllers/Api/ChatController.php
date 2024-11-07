@@ -57,7 +57,7 @@ class ChatController extends Controller
     {
         try {
             $user = auth('api')->user();
-            $chats = $user->chats()->orderBy('created_at', 'desc')->get();
+            $chats = $user->chats()->orderBy('created_at', 'asc')->get();
             return $this->successResponse($chats, 'API Chat', 200);
         } catch (Exception $e) {
             return $this->errorResponse(null, 'Gagal mendapatkankan data', 500);
