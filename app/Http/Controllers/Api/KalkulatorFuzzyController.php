@@ -60,7 +60,7 @@ class KalkulatorFuzzyController extends Controller
     {
         try {
             $user = auth('api')->user();
-            $kalkulatorFuzzy = $user->kalkulatorFuzzies()->orderBy('created_at', 'DESC')->get();
+            $kalkulatorFuzzy = $user->kalkulatorFuzzies()->with('indexFuzzy')->orderBy('created_at', 'DESC')->get();
             return $this->successResponse($kalkulatorFuzzy, 'Ambil data', 200);
         } catch (Exception $e) {
             return $this->errorResponse(null, 'Gagal mendapatkankan data', 500);
@@ -118,7 +118,7 @@ class KalkulatorFuzzyController extends Controller
     {
         try {
             $user = auth('api')->user();
-            $kalkulatorFuzzy = $user->kalkulatorFuzzies()->find($id);
+            $kalkulatorFuzzy = $user->kalkulatorFuzzies()->with('indexFuzzy')->find($id);
 
             if (!$kalkulatorFuzzy) {
                 return $this->errorResponse(null, 'Gagal mendapatkankan data', 404);
