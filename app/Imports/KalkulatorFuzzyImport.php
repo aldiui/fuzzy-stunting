@@ -44,10 +44,6 @@ class KalkulatorFuzzyImport implements ToCollection, WithHeadingRow
 
     private function processRow(array $data): bool
     {
-        if (KalkulatorFuzzy::where('nama_bayi', $data['nama_bayi'])->exists()) {
-            return false;
-        }
-
         $fuzzyService = new FuzzyService();
         $hitungZcore = $fuzzyService->hitungZCore($data);
         $hitungFuzzy = $fuzzyService->hitungFuzzy($hitungZcore);
