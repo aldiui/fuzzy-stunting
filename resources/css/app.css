@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+.fi-sidebar-item-active > a {
+    @apply bg-green-500;
+
+    > svg,
+    > span {
+        @apply text-green-500;
+    }
+
+    &:hover {
+        @apply bg-green-500;
+    }
+}
+
+.fi-ta-table > thead > tr {
+    @apply bg-green-600 dark:divide-white/5;
+}
+
+.fi-ta-header-cell-label {
+    @apply text-white;
+}
+
+.fi-ta-row {
+    @apply divide-x divide-gray-200 dark:divide-white/5;
+}
+
+.fi-sidebar-item > a {
+    > svg,
+    > span {
+        @apply text-white;
+    }
+
+    &:hover {
+        @apply bg-green-500;
+    }
+}
+
+.fi-layout {
+    @apply bg-gradient-to-b from-slate-100 to-slate-200;
+}
+
+.fi-sidebar {
+    @apply bg-gradient-to-b from-green-700 to-green-900;
+}
+
+.fi-simple-layout {
+    @apply bg-gradient-to-b from-green-700 to-green-900;
+}
+
+.fi-logo {
+    @apply p-1 rounded-lg;
+}
+
+.fi-sidebar-group-label {
+    @apply text-white opacity-90;
+}
